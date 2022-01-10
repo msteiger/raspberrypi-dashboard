@@ -1,0 +1,48 @@
+html {
+  min-height: 100%;
+}
+
+body {
+}
+
+
+body h1 {
+  text-align: center;
+  margin: 1rem;
+}
+
+.mycontainer {
+  display:flex;
+  justify-content:center;
+  gap:50px
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.card {
+  transition: box-shadow 0.3s
+}
+
+.card:hover {
+  box-shadow: 0px 0px 15px -5px blue;
+}
+
+.card img {
+  padding: 1em;
+  filter: grayscale(25%);
+}
+
+.card:hover img {
+  filter: none;
+  animation: mymove 1s infinite;
+}
+
+
+@keyframes mymove {
+  50% { transform: rotate(15deg); }
+}
+
+

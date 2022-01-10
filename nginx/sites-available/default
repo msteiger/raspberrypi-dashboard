@@ -1,0 +1,8 @@
+server {
+	location /energy-meter {
+        try_files $uri /energy-meter/index.html;
+	}
+	location /openhab/ {
+        proxy_pass http://localhost:8080/;
+    }
+}
