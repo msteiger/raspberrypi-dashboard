@@ -35,14 +35,15 @@ a {
 .card img {
   padding: 1em;
   filter: grayscale(25%);
+  transition: padding 0.2s;
+  animation: mymove 1s infinite paused;
 }
 
 .card:hover img {
   padding: 0.5em;
   filter: none;
-  animation: mymove 1s infinite;
+  animation-play-state: running;
 }
-
 
 @keyframes mymove {
   50% { transform: rotate(15deg); }
