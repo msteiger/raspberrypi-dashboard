@@ -1,21 +1,22 @@
-html {
-  min-height: 100%;
-}
-
 body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 
 body h1 {
-  text-align: center;
   margin: 1rem;
 }
 
 .mycontainer {
-  display:flex;
-  justify-content:center;
-  gap:50px
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
+
 
 a {
   color: black;
@@ -23,6 +24,7 @@ a {
 }
 
 .card {
+  max-width: 18rem;
   transition: box-shadow 0.3s
 }
 
@@ -36,6 +38,7 @@ a {
 }
 
 .card:hover img {
+  padding: 0.5em;
   filter: none;
   animation: mymove 1s infinite;
 }
