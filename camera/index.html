@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Camera Viewer</title>
+  </head>
+
+<body>
+
+  <h1>Camera</h1>
+
+  <img 
+      style="width: 400px; height: 400px; object-fit: none; object-position: 40% 40%;"
+      src="http://raspberrypi/camera/api/1/sd#1" 
+	  onload='imageRefresh(this, 200);' 
+  />
+  
+  <div>
+    <button type="button" onClick="openDoor()">Open</button>
+  </div>
+
+</body>
+
+<script language='javascript'>
+  function imageRefresh(img, timeout) {
+	setTimeout(function() {
+      img.src = img.src;
+    }, timeout);
+  }
+  
+  function openDoor() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://raspberrypi:8080/rest/items/Tor", true);
+    xhr.setRequestHeader('Content-Type', 'text-plain; charset=UTF-8');
+    xhr.send("ON");
+  }
+
+</script>
+
+</html>
