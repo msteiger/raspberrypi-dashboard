@@ -1,8 +1,24 @@
 server {
-	location /energy-meter {
+    location /energy-meter {
         try_files $uri /energy-meter/index.html;
-	}
-	location /openhab/ {
+    }
+    location /openhab/ {
         proxy_pass http://localhost:8080/;
+    }
+
+    location /camera/ {
+        location ^~ /camera/api/1/sd {
+	    add_header Cache-Control "no-store";
+	    proxy_pass http://camera1/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=viewer&password=PASSWORD&width=1280&height=720;
+        }
+
+        location ^~ /camera/api/1/hd {
+	    add_header Cache-Control "no-store";
+	    proxy_pass http://camera1/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=viewer&password=PASSWORD;
+        }
+    
+        # First attempt to serve request as file, then
+        # as directory, then fall back to displaying a 404.
+        try_files $uri /camera/index.html;
     }
 }
