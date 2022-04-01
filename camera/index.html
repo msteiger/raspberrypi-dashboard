@@ -4,18 +4,17 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
     <title>Camera Viewer</title>
   </head>
 
 <body>
-
-  <h1>Camera</h1>
-
   <img 
-      style="width: 400px; height: 400px; object-fit: none; object-position: 40% 40%;"
-      src="http://raspberrypi/camera/api/1/sd#1" 
-	  onload='imageRefresh(this, 200);' 
+      style="width: 400px; height: 600px; object-fit: none; object-position: 42% 40%;"
+      src="http://raspberrypi/camera/api/1/sd" 
+      onload='imageRefresh(this, 200);' 
   />
   
   <div>
@@ -26,14 +25,14 @@
 
 <script language='javascript'>
   function imageRefresh(img, timeout) {
-	setTimeout(function() {
+    setTimeout(function() {
       img.src = img.src;
     }, timeout);
   }
   
   function openDoor() {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://raspberrypi:8080/rest/items/Tor", true);
+    xhr.open("POST", "http://raspberrypi/camera/api/door", true);
     xhr.setRequestHeader('Content-Type', 'text-plain; charset=UTF-8');
     xhr.send("ON");
   }

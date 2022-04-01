@@ -1,1 +1,1 @@
-scp *.html *.css raspberrypi:/var/www/html/
+scp -r *.html *.css *.png camera/ raspberrypi:/var/www/html/
