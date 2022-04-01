@@ -34,20 +34,20 @@ a {
 }
 
 .card img {
-  padding: 1em;
+  padding: 2.0em;
   filter: grayscale(25%);
   transition: padding 0.2s;
   animation: mymove 1s infinite paused;
 }
 
 .card:hover img {
-  padding: 0.5em;
+  padding: 1.5em;
   filter: none;
   animation-play-state: running;
 }
 
 @keyframes mymove {
-  50% { transform: rotate(15deg); }
+  50% { transform: rotate(12deg); }
 }
 
 
