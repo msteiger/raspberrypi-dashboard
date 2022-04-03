@@ -4,11 +4,14 @@ body {
   font-family: "Helvetica", sans-serif;
 }
 
-button {
+.container {
+  display: flex;
+}
+
+#door-button {
   background-color: #4CAF50;
   border: none;
   color: white;
-  width: 400px;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -19,5 +22,43 @@ button {
 button:hover {
   background-color: #5CBF60;
   color: white;
+}
+
+
+#camera {
+  border: 1px solid gray;
+}
+
+@media screen and (orientation: portrait) {
+  .container {
+    flex-direction: column;
+  }
+
+  #door-button{
+    margin-top: 10px;
+    width: 400px;
+  }
+
+  #camera {
+    width: 400px; 
+    height: 600px; 
+  }
+}
+
+
+@media screen and (orientation: landscape) {
+  .container {
+    flex-direction: row;
+  }
+
+  #door-button{
+    margin-left: 10px;
+    height: 400px;
+  }
+
+  #camera{
+    width: 600px; 
+    height: 400px; 
+  }
 }
 

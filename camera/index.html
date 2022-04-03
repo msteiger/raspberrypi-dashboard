@@ -11,22 +11,21 @@
   </head>
 
 <body>
-  <img 
-      style="width: 400px; height: 600px; object-fit: none; object-position: 42% 40%;"
-      src="http://raspberrypi/camera/api/1/sd" 
-      onload='imageRefresh(this, 200);' 
-  />
-  
-  <div>
-    <button type="button" onClick="openDoor()">Open</button>
+  <div class="container">
+    <img id="camera" />
+    <button id="door-button" type="button" onClick="openDoor()">Open</button>
   </div>
 
 </body>
 
 <script language='javascript'>
+  let cameraImage = document.getElementById("camera");
+  imageRefresh(cameraImage, 900);
+
   function imageRefresh(img, timeout) {
     setTimeout(function() {
-      img.src = img.src;
+      img.src = "http://raspberrypi/camera/api/1/sd" ;
+      imageRefresh(img, timeout);
     }, timeout);
   }
   
