@@ -26,7 +26,8 @@ button:hover {
 
 
 #camera {
-  border: 1px solid gray;
+  object-fit: none; 
+  background-color: gray;
 }
 
 @media screen and (orientation: portrait) {
@@ -40,6 +41,7 @@ button:hover {
   }
 
   #camera {
+    object-position: 42% 40%;
     width: 400px; 
     height: 600px; 
   }
@@ -53,12 +55,13 @@ button:hover {
 
   #door-button{
     margin-left: 10px;
-    height: 400px;
+    height: 350px;
   }
 
   #camera{
-    width: 600px; 
-    height: 400px; 
+    object-position: 30% 35%;
+    width: 700px; 
+    height: 350px; 
   }
 }
 

@@ -23,10 +23,8 @@
   imageRefresh(cameraImage, 900);
 
   function imageRefresh(img, timeout) {
-    setTimeout(function() {
-      img.src = "http://raspberrypi/camera/api/1/sd" ;
-      imageRefresh(img, timeout);
-    }, timeout);
+    img.src = "http://raspberrypi/camera/api/1/sd" ;
+    setTimeout(() => imageRefresh(img, timeout), timeout);
   }
   
   function openDoor() {
